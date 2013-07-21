@@ -11,19 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :address %><br />
+    <fieldset>
+    <%= f.label :address %>
     <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude %><br />
+
+
+    <%= f.label :latitude %>
     <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br />
+
+    <%= f.label :longitude %>
     <%= f.text_field :longitude %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    </fieldset>
+    <br />
+    <%= f.submit :class => "btn btn-success" %>
+
 <% end %>

@@ -1,10 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Address:</b>
-  <%= @location.address %>
-</p>
-
+<h2><%= @location.address %></h2>
+  
 <p>
   <b>Latitude:</b>
   <%= @location.latitude %>
@@ -15,10 +10,10 @@
   <%= @location.longitude %>
 </p>
 
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+<div class="map">
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=940x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+</div>
 
-<br />
-
-
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<% if signed_in? %>
+<%= link_to 'Edit', edit_location_path(@location), :class => "btn" %> <% end %>
+<%= link_to 'Back', locations_path, :class => "btn" %>

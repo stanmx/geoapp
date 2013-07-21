@@ -7,8 +7,44 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">Geoapp</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><%= link_to "Locations", locations_path %></li>
+        </ul>
+        <div class="navbar-text">
+          <% if user_signed_in? %>
+            Logged in as <b><%= current_user.email %></b>.
+            <%= link_to 'Edit profile', edit_user_registration_path %> |
+            <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+          <% else %>
+            <%= link_to 'Sign up', new_user_registration_path %> |
+            <%= link_to 'Login', new_user_session_path %>
+          <% end %>
+      </div> 
+      </div>
+      
+    </div> 
+  </div>
+  
+</div>
 
-<%= yield %>
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <%= render 'shared/flash_messages' %>
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

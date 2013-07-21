@@ -10,6 +10,7 @@ gem 'json'
 
 # geocoder gem
 gem 'geocoder'
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +22,10 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  #gems for twitter bootstrap
+  gem "twitter-bootstrap-rails"
+
 end
 
 gem 'jquery-rails'

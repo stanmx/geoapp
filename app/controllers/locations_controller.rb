@@ -1,6 +1,8 @@
 class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
+  before_filter :authenticate_user!, :except => [:index, :show] 
+  
   def index
     if params[:search].present?
       @locations = Location.near(params[:search], 50, :order => :distance)
